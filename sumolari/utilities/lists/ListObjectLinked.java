@@ -163,16 +163,16 @@ public class ListObjectLinked extends ListObject
 		}
 		else if ( this.cursor == this.first )
 		{
-			this.first 	= this.cursor.next();
-			this.cursor = this.cursor.next();
-			
 			this.size--;	
 
 			if ( size == 0 )
 			{
-				this.first 	= null;
-				this.last 	= null;
-				this.cursor = null;
+				this.clear();
+			}
+			else
+			{
+				this.cursor = this.cursor.next();
+				this.first 	= this.cursor.next();
 			}
 		}
 		else if ( this.cursor == this.last )
